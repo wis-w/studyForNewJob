@@ -23,10 +23,8 @@ public class CyclicBarrierDemo {
 				try {
 					barrier.await();
 				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				} catch (BrokenBarrierException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 			},String.valueOf(i)).start();
