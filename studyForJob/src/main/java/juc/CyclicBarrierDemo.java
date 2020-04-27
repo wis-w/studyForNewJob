@@ -13,7 +13,7 @@ public class CyclicBarrierDemo {
 	
 	public static void main(String[] args) {
 		CyclicBarrier barrier = new CyclicBarrier(7,()->{
-			System.out.println("最后的实现");
+			System.out.println("最后的实现le ");
 		}) ;
 		
 		for(int i =0 ;i<7;i++) {
