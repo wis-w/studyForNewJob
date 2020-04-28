@@ -1,6 +1,7 @@
 package juc;
 
 import java.util.concurrent.BrokenBarrierException;
+import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.CyclicBarrier;
 
 /**
@@ -12,6 +13,8 @@ import java.util.concurrent.CyclicBarrier;
 public class CyclicBarrierDemo {
 	
 	public static void main(String[] args) {
+		
+//		CountDownLatch
 		CyclicBarrier barrier = new CyclicBarrier(7,()->{
 			System.out.println("最后的实现le ");
 		}) ;
