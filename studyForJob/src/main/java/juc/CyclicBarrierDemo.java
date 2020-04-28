@@ -6,9 +6,9 @@ import java.util.concurrent.CyclicBarrier;
 
 /**
  * @author wyg_edu
- * @date 2020Äê4ÔÂ27ÈÕ ÉÏÎç8:14:18
+ * @date 2020ï¿½ï¿½4ï¿½ï¿½27ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½8:14:18
  * @version v1.0
- * Ïß³Ì¼õµ½0Ê±Æô¶¯ºóÐø½øÐÐÓëCountdownL¡£.¡£Ïà·´
+ *å­—ç¬¦é›†ä¿®æ”¹å¯¼è‡´ä¸­æ–‡ä¹±ç 
  */
 public class CyclicBarrierDemo {
 	
@@ -16,7 +16,7 @@ public class CyclicBarrierDemo {
 		
 //		CountDownLatch
 		CyclicBarrier barrier = new CyclicBarrier(7,()->{
-			System.out.println("×îºóµÄÊµÏÖle ");
+			System.out.println("ï¿½ï¿½ï¿½ï¿½Êµï¿½ï¿½le ");
 		}) ;
 		
 		for(int i =0 ;i<7;i++) {
