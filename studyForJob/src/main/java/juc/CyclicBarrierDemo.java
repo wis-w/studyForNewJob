@@ -1,7 +1,6 @@
 package juc;
 
 import java.util.concurrent.BrokenBarrierException;
-import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.CyclicBarrier;
 
 /**
@@ -16,7 +15,7 @@ public class CyclicBarrierDemo {
 		
 //		CountDownLatch
 		CyclicBarrier barrier = new CyclicBarrier(7,()->{
-			System.out.println("����ʵ��le ");
+			System.out.println("���� ʵ��le ");
 		}) ;
 		
 		for(int i =0 ;i<7;i++) {
