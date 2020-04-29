@@ -1,19 +1,53 @@
 package juc;
 
 import java.util.List;
+import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @author wyg_edu
- * @date 2020Äê4ÔÂ28ÈÕ ÉÏÎç8:20:16
+ * @date 2020ï¿½ï¿½4ï¿½ï¿½28ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½8:20:16
  * @version v1.0
- * ×èÈû¶ÓÁĞ
- * µ±¶ÓÁĞÎª¿ÕÊ±£¬»ñÈ¡ÔªËØÏß³Ì±»×èÈû
- * µ±¶ÓÁĞÂúÊ±£¬Ìí¼ÓÔªËØ²Ù×÷±»×èÈû
+ * é˜»å¡é˜Ÿåˆ—
+ * 
  */
 public class BlockingQueueDemo {
 	
-	public static void main(String[] args) {
-		List list = null;
+	public static void main(String[] args) throws Exception {
+		//List list = null;
+		BlockingQueue<String> blockingQueue = new ArrayBlockingQueue<String>(1);
+		blockingQueue.add("a");// true
+		//System.out.println(blockingQueue.add("d"));//å¼‚å¸¸
+		
+		System.out.println(blockingQueue.element());// è¿”å›é¦–å…ƒç´ 
+		
+		System.out.println(blockingQueue.remove());//true
+		//System.out.println(blockingQueue.remove());// å¼‚å¸¸
+		
+		System.out.println(blockingQueue.offer("a"));//true
+		System.out.println(blockingQueue.offer("a"));//è¶Šç•Œfalse
+		System.out.println(blockingQueue.poll());//a
+		System.out.println(blockingQueue.poll());//è¶Šç•Œå–null
+		
+		//é˜»å¡
+		new Thread(()->{
+			try {
+				blockingQueue.take();// å¦‚æœæ²¡æœ‰å–åˆ°å…ƒç´ åˆ™ä¸€ç›´ç­‰å¾…
+				System.out.println("å–å‡ºå®Œæˆ");
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}).start();
+		
+		blockingQueue.put("a");
+		System.out.println("**************");
+		blockingQueue.put("d");// å¦‚æœè¯¥å…ƒç´ æ»¡äº†ï¼Œåˆ™è¿›è¡Œé˜»å¡ç­‰å¾…
+		System.out.println("ç»“æŸæ’å…¥");
+		
+		System.out.println(blockingQueue.offer("q", 2, TimeUnit.SECONDS));// æ’å…¥ï¼Œå¦‚æœé˜Ÿåˆ—æ»¡åˆ™ç­‰å¾…2ç§’ è¶…æ—¶è¿”å›false
+		System.out.println("ç­‰å¾…ç»“æŸ");
+		
 	}
-
+	
 }
