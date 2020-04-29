@@ -22,7 +22,7 @@ public class BlockingQueueDemo {
 		
 		System.out.println(blockingQueue.element());// 返回首元素
 		
-		System.out.println(blockingQueue.remove());//true
+		System.out.println(blockingQueue.remove());// true
 		//System.out.println(blockingQueue.remove());// 异常
 		
 		System.out.println(blockingQueue.offer("a"));//true
