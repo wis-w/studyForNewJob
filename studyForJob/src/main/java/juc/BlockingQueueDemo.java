@@ -17,18 +17,18 @@ public class BlockingQueueDemo {
 	public static void main(String[] args) throws Exception {
 		//List list = null;
 		BlockingQueue<String> blockingQueue = new ArrayBlockingQueue<String>(1);
-		blockingQueue.add("a");//   true
-		//System.out.println(blockingQueue.add("d"));//异常
+		blockingQueue.add("a");// true
+		//System.out.println(blockingQueue.add("d"));// 异常
 		
 		System.out.println(blockingQueue.element());// 返回首元素
 		
 		System.out.println(blockingQueue.remove());// true
 		//System.out.println(blockingQueue.remove());// 异常
 		
-		System.out.println(blockingQueue.offer("a"));//true
-		System.out.println(blockingQueue.offer("a"));//越界false
-		System.out.println(blockingQueue.poll());//a
-		System.out.println(blockingQueue.poll());//越界取null
+		System.out.println(blockingQueue.offer("a"));// true
+		System.out.println(blockingQueue.offer("a"));// 越界false
+		System.out.println(blockingQueue.poll());// a
+		System.out.println(blockingQueue.poll());// 越界取null
 		
 		//阻塞
 		new Thread(()->{
