@@ -53,8 +53,7 @@ class ShareData {
 			System.out.println(Thread.currentThread().getName() + "\t" + number);
 			// 通知唤醒
 			condition.signal();
-		} catch (Exception e) {
-		}finally {
+		} finally {
 			lock.unlock();
 		}
 	}
