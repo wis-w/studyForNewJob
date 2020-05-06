@@ -44,7 +44,6 @@ class ShareData {
 	public void increment() throws Exception {
 		lock.lock();
 		try {
-			// 1、判断
 			while (number != 0) {// 多线程判断使用while ， 不适用if 避免虚假唤醒
 				// 等待不能生产
 				condition.await();
@@ -61,7 +60,6 @@ class ShareData {
 	public void decrement() throws Exception {
 		lock.lock();
 		try {
-			// 1、判断
 			while (number == 0) {
 				// 等待不能生产
 				condition.await();
