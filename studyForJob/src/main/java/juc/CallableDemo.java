@@ -17,7 +17,7 @@ public class CallableDemo {
 		FutureTask<Integer> futureTask2 = new FutureTask<Integer>(new MyThread());
 		
 		new Thread(futureTask1,"AA").start();
-		new Thread(futureTask2,"BB").start();// 需要起两个，否则第二个会直接复用第一个的结果
+		new Thread(futureTask2,"BB").start();// 需要起两个， 否则第二个会直接复用第一个的结果
 		
 		int n1 = 100;
 		int n2 = 0;
