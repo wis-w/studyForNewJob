@@ -13,7 +13,10 @@ public class MyThreadPoolDemo {
 	
 	public static void main(String[] args) {
 		
-		ExecutorService threadPool = Executors.newFixedThreadPool(5);// 一池5个处理线程
+//		ExecutorService threadPool = Executors.newFixedThreadPool(5);// 一池5个处理线程
+//		ExecutorService threadPool = Executors.newSingleThreadExecutor();// 一池一线程
+		ExecutorService threadPool = Executors.newCachedThreadPool();// 视情况而定线程
+		
 		// 模拟10个用户处理业务
 		try {
 			for(int i=1;i<=10;i++) {
