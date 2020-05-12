@@ -15,7 +15,7 @@ public class MyThreadPoolDemo {
 		
 //		ExecutorService threadPool = Executors.newFixedThreadPool(5);// 一池5个处理线程
 //		ExecutorService threadPool = Executors.newSingleThreadExecutor();// 一池一线程
-		ExecutorService threadPool = Executors.newCachedThreadPool();// 视情况而定线程
+		ExecutorService threadPool = Executors.newCachedThreadPool();// 视情况而定线程（可扩容）
 		
 		// 模拟10个用户处理业务
 		try {
