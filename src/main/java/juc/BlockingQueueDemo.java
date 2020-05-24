@@ -20,7 +20,7 @@ public class BlockingQueueDemo {
 		blockingQueue.add("a");// true
 		//System.out.println(blockingQueue.add("d"));//  异常
 		
-		System.out.println(blockingQueue.element());// 返回首元素
+		System.out.println(blockingQueue.element());// 返回首元素 
 		
 		System.out.println(blockingQueue.remove());// true
 		//System.out.println(blockingQueue.remove());// 异常
