@@ -1,30 +1,22 @@
-package juc;
+package demo;
 
 import java.util.concurrent.TimeUnit;
 
 /**
  * @author wyg_edu
- * @date 2020年5月21日 上午8:23:19
+ * @date 2020年5月25日 上午8:18:26
  * @version v1.0
- * 死锁是两个或者两个以上的进行在执行过程中
- * 因抢夺资源而造成的相互等待的现象
- * 若无外力推动则都将无法推动下去
  */
-public class DeadLockDemo {
-
+public class Demo2 {
 	public static void main(String[] args) {
-		String lockA = null;
-		String lockB = null;
-		new Thread(new HoldLockThread(lockA, lockB), "ThreadAA").start();
-		new Thread(new HoldLockThread(lockB, lockA), "ThreadBB").start();
-
+		System.out.println("asdas");
 	}
 }
-
 class HoldLockThread implements Runnable{
 	
 	private String lockA;
 	private String lockB;
+	
 	
 	public HoldLockThread(String lockA, String lockB) {
 		super();
@@ -46,4 +38,3 @@ class HoldLockThread implements Runnable{
 		}
 	}
 	
-}

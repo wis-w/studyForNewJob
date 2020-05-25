@@ -25,7 +25,6 @@ public class SynchronsQueueDemo {
 				System.out.println(Thread.currentThread().getName()+"\t +c");
 				blockingQueue.put("c");
 			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		},"AA").start();
