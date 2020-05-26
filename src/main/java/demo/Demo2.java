@@ -12,6 +12,9 @@ public class Demo2 {
 		System.out.println("asdas");
 	}
 }
+
+
+
 class HoldLockThread implements Runnable{
 	
 	private String lockA;

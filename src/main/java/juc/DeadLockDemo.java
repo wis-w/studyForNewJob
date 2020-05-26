@@ -12,9 +12,9 @@ import java.util.concurrent.TimeUnit;
  */
 public class DeadLockDemo {
 
+	static String lockA = "A";
+	static String lockB = "B";
 	public static void main(String[] args) {
-		String lockA = null;
-		String lockB = null;
 		new Thread(new HoldLockThread(lockA, lockB), "ThreadAA").start();
 		new Thread(new HoldLockThread(lockB, lockA), "ThreadBB").start();
 
@@ -40,9 +40,9 @@ class HoldLockThread implements Runnable{
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
-		}
-		synchronized (lockB) {
-			System.out.println(Thread.currentThread().getName()+"\t持有"+lockB+"\t尝试获取"+lockA);
+			synchronized (lockB) {
+				System.out.println(Thread.currentThread().getName()+"\t持有"+lockB+"\t尝试获取"+lockA);
+			}
 		}
 	}
 	
